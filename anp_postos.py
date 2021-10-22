@@ -12,8 +12,7 @@ import tkinter
 from selenium.webdriver.support.ui import WebDriverWait
 
 
-path = 'C:\\Users\\matheus.vizzotto\\Desktop\\chromedriver_win32\\chromedriver.exe'
-
+path = # chromedriver path
 
 
 ###############################  BAIXA ARQUIVOS  ##############################
@@ -55,30 +54,6 @@ try:
             paths = WebDriverWait(driver, 120, 1).until(every_downloads_chrome)
             driver.get('https://postos.anp.gov.br/consulta.asp')
 
-            for arquivo in os.listdir("C:\\Users\\matheus.vizzotto\\Downloads"):
-                if re.search(ANP_pattern, arquivo):
-                    if f"{x}.xls" in os.listdir("C:\\Users\\matheus.vizzotto\\Desktop\\Banco_Dados\\ANP\\Scrape"):
-                       os.remove(f"C:\\Users\\matheus.vizzotto\\Desktop\\Banco_Dados\\ANP\\Scrape\\{x}.xls")
-                       os.rename(f'C:\\Users\\matheus.vizzotto\\Downloads\\{arquivo}', f'C:\\Users\\matheus.vizzotto\\Desktop\\Banco_Dados\\ANP\\Scrape\\{x}.xls')
-                        #break
-                    else:
-                        os.rename(f'C:\\Users\\matheus.vizzotto\\Downloads\\{arquivo}',
-                              f'C:\\Users\\matheus.vizzotto\\Desktop\\Banco_Dados\\ANP\\Scrape\\{x}.xls')
-
-        #   break
-
-
-
-            #while True:
-            #    for arquivo in os.listdir("C:\\Users\\matheus.vizzotto\\Downloads"):
-            #        if re.search(ANP_pattern, arquivo):
-            #            if f"{x}.xls" in os.listdir("C:\\Users\\matheus.vizzotto\\Desktop\\Banco_Dados\\ANP\\Scrape"):
-            #                os.remove(f"C:\\Users\\matheus.vizzotto\\Desktop\\Banco_Dados\\ANP\\Scrape\\{x}.xls")
-            #            os.rename(f'C:\\Users\\matheus.vizzotto\\Downloads\\{arquivo}', f'C:\\Users\\matheus.vizzotto\\Desktop\\Banco_Dados\\ANP\\Scrape\\{x}.xls')
-            #            break
-            #   break
-
-
     download()
     driver.quit()
     ok = "Download de anp_postos.py efetivado."
@@ -90,8 +65,6 @@ except Exception as e:
     erro = "Problema com download de anp_postos.py! Processo interrompido."
 
 ###############################      AJUSTE TABELA    #################################
-
-os.chdir("C:\\Users\\matheus.vizzotto\\Desktop\\Banco_Dados\\ANP\\Scrape")
 
 #### uso read_html porque não é um arquivo xls (pd.read_excel gera erro)  ####
 
@@ -132,8 +105,6 @@ except Exception as e:
 sigla_estado = ["AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS" , "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO"]
 postos_interesse = ["BANDEIRA BRANCA", "IPIRANGA", "CHARRUA", "RAIZEN", "ALESAT", "RODOIL", "MAXSUL", "STANG", "PETROBRAS DISTRIBUIDORA S.A.", "SUL COMBUSTÍVEIS", "POTENCIAL", "CIAPETRO", "AMERICANOIL", "DIBRAPE", "WALENDOWSKY", "RAIZEN MIME"]
 
-os.chdir("C:\\Users\\matheus.vizzotto\\Desktop\\Banco_Dados\\ANP\\Scrape")
-tabela = pd.read_excel("AGREGADO.xlsx")
 
 d = []
 for x in postos_interesse:
