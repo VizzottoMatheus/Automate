@@ -9,7 +9,6 @@ import urllib.request
 from bs4 import BeautifulSoup
 import re
 
-os.chdir("C:\\Users\\matheus.vizzotto\\Downloads")
 
 url = "http://www.anp.gov.br/dados-abertos-anp/vendas-derivados-petroleo-biocombustiveis"
 
@@ -47,7 +46,7 @@ try:
             links_download.append("http://www.anp.gov.br" + x['href'])
 
     for x in links_download:
-        urllib.request.urlretrieve(x, f"C:\\Users\\matheus.vizzotto\\Desktop\\Banco_Dados\\ANP\\Scrape\\Combustiveis\\{x[48:]}")
+        urllib.request.urlretrieve(x, "{x[48:]}")
 
     ok = "Download de anp_combustiveis.py efetivado."
 
