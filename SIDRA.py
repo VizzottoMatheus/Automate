@@ -104,7 +104,6 @@ class sidra:
 			11: 'Rondônia',
 			14: 'Roraima'
 			}
-
 		print(e)
 
 	def variaveis(self):
@@ -118,7 +117,6 @@ class sidra:
 			215: 'Valor da produção (mil reais)',
 			1000215: 'Valor da produção - percentual do total geral (%)'
 			}
-
 		print(v)
 
 	def extrai_sidra(self, cod_tab, variavel, estado, cultura):
