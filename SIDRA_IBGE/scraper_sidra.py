@@ -41,10 +41,10 @@ class sidra:
 		return df
 
 
-agricultura = sidra()
-agricultura.show_menu()
-agricultura.show_cultures()
-agricultura.show_states()
-agricultura.show_variables()
-df = agricultura.extrai_dados(8331, 43, 40124)
-print(df.head(10))
+#agricultura = sidra()
+#agricultura.show_menu()
+#agricultura.show_cultures()
+#agricultura.show_states()
+#agricultura.show_variables()
+#df = agricultura.extrai_dados(8331, 43, 40124)
+#print(df.head(10))
