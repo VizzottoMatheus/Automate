@@ -1,8 +1,10 @@
-import pandas as pd
 
-class sidra:
-	def culturas(self):
-		c = {
+#  DICIONÁRIOS COM A CORRESPONDÊNCIA DE CÓDIGOS PARA CONSTRUIR O LINK DA URL E EXTRAIR DADOS
+
+
+dicionarios = ["culturas", "estados", "variaveis"]
+
+culturas = {	
 			0: 'Total',
 			40129: 'Abacate',
 			40092: 'Abacaxi*',
@@ -75,11 +77,10 @@ class sidra:
 			40272: 'Tungue (fruto seco)',
 			40273: 'Urucum (semente)',
 			40274: 'Uva'
-			}
-		print(c)
+}
 
-	def estados(self):
-		e = {
+
+estados = {
 			12: 'Acre',
 			27: 'Alagoas',
 			16: 'Amapá',
@@ -103,11 +104,10 @@ class sidra:
 			43: 'Rio Grande do Sul',
 			11: 'Rondônia',
 			14: 'Roraima'
-			}
-		print(e)
+}
 
-	def variaveis(self):
-		v = {
+
+variaveis = {
 			8331: 'Área plantada ou destinada à colheita',
 			1008331: 'Área plantada ou destinada à colheita - percentual do total geral (%)',
 			216: 'Área colhida (Hectares)',
@@ -116,24 +116,7 @@ class sidra:
 			112: 'Rendimento médio da produção',
 			215: 'Valor da produção (mil reais)',
 			1000215: 'Valor da produção - percentual do total geral (%)'
-			}
-		print(v)
-
-	def extrai_sidra(self, cod_tab, variavel, estado, cultura):
-		root = "http://api.sidra.ibge.gov.br/values/"
-		link = root + "t/" + str(cod_tab) + "/p/all/v/" + str(variavel) + "/c782/" + str(cultura) + "/n6/in%20n3%20" + str(estado)
-		print(link)
-		df = pd.read_json(link)
-		print(df.head())
-
-
-agricultura = sidra()
-agricultura.culturas()
-agricultura.estados()
-agricultura.variaveis()
-agricultura.extrai_sidra(5457, 8331, 43, 40124)
-
-
+}
 
 
 
