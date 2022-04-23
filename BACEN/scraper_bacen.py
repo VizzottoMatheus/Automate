@@ -21,10 +21,10 @@ def bacen_downloader(date_as_index = False):
         'Saldo da carteira de crédito a pessoas jurídicas em relação ao PIB': 20623,
         'Saldo da carteira de crédito a pessoas físicas em relação ao PIB': 20624
         }
-    print("Baixando dados:")
+    print("Baixando dados...")
     d = {}
     for serie, codigo in inputs.items():
-        print(f" -{serie}")
+        #print(f" -{serie}")
         link = api_sgs.format(codigo)
         if date_as_index == False:
             d["{}".format(serie)] = pd.read_csv(link, sep = ";", decimal= ",", dtype = {"valor": "float"}, parse_dates = ["data"])
