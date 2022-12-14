@@ -17,6 +17,7 @@ class sidra:
 		for dicionario in dicionarios:
 			print("    -" + dicionario)
 		print("Modelo: extrai_dados(codigo_variavel, codigo_estado, codigo_cultura)")
+		
 	def show_cultures(self):
 		print("Culturas disponíveis:")
 		for cultura in culturas.items():
