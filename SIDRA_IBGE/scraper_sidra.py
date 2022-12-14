@@ -2,10 +2,10 @@
 import pandas as pd
 import dicionario_api as da
 
-dicionarios = da.dicionarios
-culturas = da.culturas
-estados = da.estados
-variaveis = da.variaveis
+dicionarios = da.dicionarios()
+culturas = da.culturas()
+estados = da.estados()
+variaveis = da.variaveis()
 
 
 
@@ -16,7 +16,7 @@ class sidra:
 		print("Argumentos: ")
 		for dicionario in dicionarios:
 			print("    -" + dicionario)
-		print("Modelo: extrai_dados(codigo_variavel, codigo_estado, codigo_cultura")
+		print("Modelo: extrai_dados(codigo_variavel, codigo_estado, codigo_cultura)")
 	def show_cultures(self):
 		print("Culturas disponíveis:")
 		for cultura in culturas.items():
@@ -37,14 +37,13 @@ class sidra:
 		link = root + "t/" + str(cod_tab) + "/p/all/v/" + str(variavel) + "/c782/" + str(cultura) + "/n6/in%20n3%20" + str(estado)
 		print(link)
 		df = pd.read_json(link)
-		print(df.head())
 		return df
 
 
-#agricultura = sidra()
-#agricultura.show_menu()
-#agricultura.show_cultures()
-#agricultura.show_states()
-#agricultura.show_variables()
+agricultura = sidra()
+agricultura.show_menu()
+agricultura.show_cultures()
+agricultura.show_states()
+agricultura.show_variables()
 #df = agricultura.extrai_dados(8331, 43, 40124)
 #print(df.head(10))

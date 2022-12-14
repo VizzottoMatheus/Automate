@@ -1,10 +1,12 @@
 
 #  DICIONÁRIOS COM A CORRESPONDÊNCIA DE CÓDIGOS PARA CONSTRUIR O LINK DA URL E EXTRAIR DADOS
 
+def dicionarios() -> list:
+	dici = ["culturas", "estados", "variaveis"]
+	return dici
 
-dicionarios = ["culturas", "estados", "variaveis"]
-
-culturas = {	
+def culturas() -> dict:
+	cult = {	
 			0: 'Total',
 			40129: 'Abacate',
 			40092: 'Abacaxi*',
@@ -77,10 +79,11 @@ culturas = {
 			40272: 'Tungue (fruto seco)',
 			40273: 'Urucum (semente)',
 			40274: 'Uva'
-}
+	}
+	return cult
 
-
-estados = {
+def estados() -> dict:
+	est = {
 			12: 'Acre',
 			27: 'Alagoas',
 			16: 'Amapá',
@@ -104,10 +107,11 @@ estados = {
 			43: 'Rio Grande do Sul',
 			11: 'Rondônia',
 			14: 'Roraima'
-}
+		}
+	return est
 
-
-variaveis = {
+def variaveis() -> dict:
+	variaveis = {
 			8331: 'Área plantada ou destinada à colheita',
 			1008331: 'Área plantada ou destinada à colheita - percentual do total geral (%)',
 			216: 'Área colhida (Hectares)',
@@ -116,7 +120,7 @@ variaveis = {
 			112: 'Rendimento médio da produção',
 			215: 'Valor da produção (mil reais)',
 			1000215: 'Valor da produção - percentual do total geral (%)'
-}
-
+		}
+	return variaveis
 
 
